@@ -1,0 +1,38 @@
+{
+  "name": "lab08-data-modeling",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "node .",
+    "test": "jest --verbose --detectOpenHandles",
+    "lint": "eslint --ignore-path .gitignore --ignore-pattern internals/scripts || true",
+    "test-watch": "jest --watchAll --verbose"
+  },
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^6.2.0",
+    "express": "^4.16.4",
+    "jest": "^23.6.0",
+    "mongodb-memory-server": "^2.9.1",
+    "mongoose": "^5.4.2",
+    "mongoose-schema-jsonschema": "^1.2.1",
+    "morgan": "^1.9.1",
+    "supertest": "^3.3.0",
+    "uuid": "^3.3.2"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/401-advanced-javascript-austinjess/Lab08-Data-Modeling.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/401-advanced-javascript-austinjess/Lab08-Data-Modeling/issues"
+  },
+  "homepage": "https://github.com/401-advanced-javascript-austinjess/Lab08-Data-Modeling#readme",
+  "devDependencies": {
+    "eslint": "^5.16.0",
+    "nodemon": "^1.19.1"
+  }
+}
