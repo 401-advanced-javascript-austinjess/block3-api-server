@@ -70,7 +70,6 @@ describe('The Product Repository', () => {
       description: 'to be deleted',
     });
     const deleteProduct = await repository.delete(result._id);
-    console.log(deleteProduct);
     expect(deleteProduct).toBeDefined();
   });
 });

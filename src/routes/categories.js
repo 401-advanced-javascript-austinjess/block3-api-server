@@ -4,9 +4,12 @@ const Categories = require('../models/categories');
 const categories = new Categories();
 
 router.get('/categories', getCategories);
+// CREATE
 router.post('/categories', postCategories);
 router.get('/categories/:id', getCategory);
+// UPDATE
 router.put('/categories/:id', putCategories);
+// DELETE
 router.delete('/categories/:id', deleteCategories);
 
 // ROUTE HANDLER FUNCTIONS

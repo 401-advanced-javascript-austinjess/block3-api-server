@@ -2,6 +2,7 @@
 
 const categoriesRouter = require('./routes/categories');
 const productsRouter = require('./routes/products');
+const authRouter = require('./auth/router');
 
 // 3rd Party Resources
 require('dotenv').config();
@@ -26,6 +27,7 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
 // Routes
+app.use(authRouter);
 app.use(categoriesRouter);
 app.use(productsRouter);
 

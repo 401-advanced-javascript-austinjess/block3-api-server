@@ -5,9 +5,12 @@ const Products = require('../models/products.js');
 const products = new Products();
 
 router.get('/products', getProducts);
+// CREATE
 router.post('/products', postProducts);
 router.get('/products/:id', getProduct);
+// UPDATE
 router.put('/products/:id', putProducts);
+// DELETE
 router.delete('/products/:id', deleteProducts);
 
 function getProducts(request, response, next) {
