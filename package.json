@@ -23,6 +23,9 @@
     "supertest": "^3.3.0",
     "uuid": "^3.3.2"
   },
+  "jest": {
+    "testEnvironment": "node"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/401-advanced-javascript-austinjess/Lab08-Data-Modeling.git"
