@@ -9,8 +9,8 @@ authRouter.post('/signup', (req, res, next) => {
   user
     .save()
     .then((user) => {
-      req.token = user.generateToken();
       req.user = user;
+      req.token = user.generateToken();
       res.set('token', req.token);
       res.cookie('auth', req.token);
       // SEND DATA HERE

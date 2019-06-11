@@ -8,6 +8,6 @@ const productSchema = mongoose.Schema({
 });
 
 const Product =
-  mongoose.models.category || mongoose.model('product', productSchema);
+  mongoose.model('product', productSchema) || mongoose.models.category;
 
 module.exports = Product;

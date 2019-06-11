@@ -25,6 +25,7 @@ describe('The Auth Router', () => {
         return mockRequest
           .post('/signup')
           .send(users[userType])
+          .expect(200)
           .then((results) => {
             let token = jwt.verify(results.text, process.env.SECRET);
             id = token.id;

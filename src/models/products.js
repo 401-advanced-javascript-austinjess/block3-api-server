@@ -8,6 +8,10 @@ class Products {
   //   this.database = [];
   // }
 
+  getAll() {
+    return Product.find();
+  }
+
   get(_id) {
     if (!/^[0-9a-z]{24}$/i.test(_id)) return Promise.resolve(null);
 
