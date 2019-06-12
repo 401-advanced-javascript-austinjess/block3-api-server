@@ -4,17 +4,19 @@ const connect = require('../../utils/mongoose.connect');
 require('dotenv').config();
 const mongoose = require('mongoose');
 const MONGODB_URI = process.env.MONGODB_URI;
+const supergoose = require('./supergoose');
 
 const Products = require('../../src/models/products');
 const repository = new Products();
 
 describe('The Product Repository', () => {
   beforeAll(() => {
-    return connect(MONGODB_URI);
+    supergoose.startDB();
+    // return connect(MONGODB_URI);
   });
 
   afterAll(() => {
-    mongoose.connection.close();
+    supergoose.stopDB();
   });
 
   it('should post a new product to the db and retreive it', async () => {
@@ -70,7 +72,6 @@ describe('The Product Repository', () => {
       description: 'to be deleted',
     });
     const deleteProduct = await repository.delete(result._id);
-    console.log(deleteProduct);
     expect(deleteProduct).toBeDefined();
   });
 });

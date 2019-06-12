@@ -1,13 +1,17 @@
 var express = require('express');
 var router = express.Router();
+let auth = require('../auth/middleware');
 const Categories = require('../models/categories');
 const categories = new Categories();
 
 router.get('/categories', getCategories);
-router.post('/categories', postCategories);
+// CREATE
+router.post('/categories', auth('create'), postCategories);
 router.get('/categories/:id', getCategory);
-router.put('/categories/:id', putCategories);
-router.delete('/categories/:id', deleteCategories);
+// UPDATE
+router.put('/categories/:id', auth('update'), putCategories);
+// DELETE
+router.delete('/categories/:id', auth('delete'), deleteCategories);
 
 // ROUTE HANDLER FUNCTIONS
 function getCategories(request, response, next) {

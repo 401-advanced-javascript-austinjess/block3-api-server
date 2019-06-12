@@ -8,6 +8,11 @@ const mongooseOptions = {
   useCreateIndex: true,
 };
 
-mongoose.connect(process.env.MONGODB_URI, mongooseOptions);
-
-require('./src/app.js').start(process.env.PORT);
+mongoose
+  .connect(process.env.MONGODB_URI, mongooseOptions)
+  .then(() => {
+    require('./src/app.js').start(process.env.PORT);
+  })
+  .catch(function(err) {
+    console.error(err);
+  });

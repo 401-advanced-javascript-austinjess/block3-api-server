@@ -1,19 +1,23 @@
 var express = require('express');
 var router = express.Router();
 
+const auth = require('../auth/middleware');
 const Products = require('../models/products.js');
 const products = new Products();
 
 router.get('/products', getProducts);
-router.post('/products', postProducts);
+// CREATE
+router.post('/products', auth('create'), postProducts);
 router.get('/products/:id', getProduct);
-router.put('/products/:id', putProducts);
-router.delete('/products/:id', deleteProducts);
+// UPDATE
+router.put('/products/:id', auth('update'), putProducts);
+// DELETE
+router.delete('/products/:id', auth('delete'), deleteProducts);
 
 function getProducts(request, response, next) {
   // expects an array of objects back
   products
-    .get()
+    .getAll()
     .then((data) => {
       const output = {
         count: data.length,
