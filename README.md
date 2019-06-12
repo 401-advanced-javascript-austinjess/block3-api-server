@@ -1,20 +1,20 @@
 # ![CF](http://i.imgur.com/7v5ASc8.png) LAB
 
-## Lab08 - Data Modeling
+## Lab 15 - Build An API Server
 
 ### Author: Austin Jess
 
 ### Links and Resources
 
-- [submission PR](https://github.com/401-advanced-javascript-austinjess/Lab08-Data-Modeling/pull/3)
-- [travis](https://travis-ci.com/401-advanced-javascript-austinjess/Lab08-Data-Modeling)
+- [submission PR](https://github.com/401-advanced-javascript-austinjess/block3-api-server/pull/1)
+- [travis](https://travis-ci.com/401-advanced-javascript-austinjess/block3-api-server)
 
 ### Setup
 
 #### `.env` requirements
 
 - `PORT` - 3000
-- `MONGODB_URI` - URL to the running mongo instance/db
+- `MONGODB_URI` - mongodb://localhost/api-server
 
 #### Running the app
 
